@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  dockerfluentd:
+    image: dockerfluentd
+    container_name: dockerfluentd
+    build:
+      context: ./dockerfile/fluentd
+    ports:
+      - "24224:24224"
+    logging:
+      driver: "json-file"
+    restart: always
